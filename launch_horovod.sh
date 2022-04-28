@@ -11,7 +11,6 @@
 #   NAME: the name of your PBS job (check qstat to see the queue status).
 #   QUEUE: select the type of queue of your choice (check qstat -Q to see how many are available on your HPC and check its wiki for more info).
 #   MAIL: set your email to be fed when your job starts, ends or aborts.
-#   WORK_DIR: set as your working directory.
 #   RES: resource request policy
 #          - A single chunk is only reserved to all cpus requested by CPU_NODES, without gpus.
 #          - Multiple chunks, requested by GPU_NODES, where each one of them contains zero cpus and 1 gpu.
@@ -19,8 +18,11 @@
 #        If you want instead to switch to a more balanced and classic configuration, feel free to play on this configuration to match your preferences.
 #
 # Variables to pass inside the qsub script:
+#   WORK_DIR: set as your working directory.
 #   CONTAINER: the name of your singularity container.
 #   SCRIPT: the name of your python script.
+#   NP: number of mpi parallel processes, corresponds to the overall gpus you requested in launch_horovod.sh.
+#   arg: arguments to pass inside your python script, change their number and assignment to match your requirements
 #
 #
 # Author: Giancarlo Paoletti (giancarlo.paoletti@iit.it) - feel free to ask me anything!
