@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # This is a general bash script to launch your python script on a HPC using openmpi on multinode.
-# It is a two-stage process, where here you setup two kinds of variables to feed the computational script (run_horovod.sh).
+# This is the final part of a two-stage process, where here you setup the variables inherited from launch_horovod.sh
+# and execute your python script.
 # Keep in mind that it is custom tailored for executing python scripts inside a singularity container,
 # which contains horovod for distributed training.
 #
@@ -9,7 +10,7 @@
 #   WORK_DIR: set as your working directory.
 #   CONTAINER: the name of your singularity container.
 #   SCRIPT: the name of your python script.
-#   NP: number of mpi parallel processes, corresponds to the overall gpus you requested in launch.sh.
+#   NP: number of mpi parallel processes, corresponds to the overall gpus you requested in launch_horovod.sh.
 #   arg: arguments to pass inside your python script, change their number and assignment to match your requirements
 #
 #
