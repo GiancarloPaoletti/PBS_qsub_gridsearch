@@ -22,6 +22,4 @@ cd $PBS_O_WORKDIR
 module load cuda/10.2
 module load openmpi/4.0.5/gcc7-ib
 
-mpirun -np $NP -bind-to none -map-by slot -mca pml ob1 -mca btl ^openib -mca btl_tcp_if_exclude lo,docker0 -x HOROVOD_AUTOTUNE=1 -x HOROVOD_FUSION_THRESHOLD=33554432 -x HOROVOD_CYCLE_TIME=3.5 -x NCCL_DEBUG=INFO -x NCCL_SOCKET_IFNAME=^virbr0,^docker0,lo -x LD_LIBRARY_PATH -x PATH singularity exec -B $WORK_DIR --nv $WORK_DIR$CONTAINER python $WORK_DIR$SCRIPT
-
-time singularity exec -B $WORK_DIR --nv $WORK_DIR$CONTAINER python $WORK_DIR$SCRIPT --arg1 ${arg1} --arg2 ${arg2}
+mpirun -np $NP -bind-to none -map-by slot -mca pml ob1 -mca btl ^openib -mca btl_tcp_if_exclude lo,docker0 -x HOROVOD_AUTOTUNE=1 -x HOROVOD_FUSION_THRESHOLD=33554432 -x HOROVOD_CYCLE_TIME=3.5 -x NCCL_DEBUG=INFO -x NCCL_SOCKET_IFNAME=^virbr0,^docker0,lo -x LD_LIBRARY_PATH -x PATH time singularity exec -B $WORK_DIR --nv $WORK_DIR$CONTAINER python $WORK_DIR$SCRIPT --arg1 ${arg1} --arg2 ${arg2}
