@@ -11,7 +11,9 @@ Keep in mind that it is custom tailored for executing python scripts inside a si
 Feel free to ask me anything!
 
 ### Single node setup
-Edit and execute ``` launch_single.sh ```
+- Edit ``` run_single.sh ```
+- Edit and execute ``` launch_single.sh ```
 
 ### Multi node setup
-Edit and execute ``` launch_horovod.sh ```
+- Edit ``` run_horovod.sh ```
+- Edit and execute ``` launch_horovod.sh ```
